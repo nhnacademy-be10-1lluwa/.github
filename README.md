@@ -135,11 +135,11 @@ https://book1lluwa.store
 ---
 
 ## ERD
-
-> 전체 도메인 ERD 설계는 아래 링크에서 확인 가능합니다.
-
+<p align="center">
+  <img src="/BookStore #2.png" width="90%">
+</p>
+> 전체 도메인의 자세한 설계는 아래 링크를 통해 확인 가능합니다.
 - [🌐 ERD Cloud](https://www.erdcloud.com/d/bqAZmQ8TgYuTMF3eW)
-
 
 ---
 
