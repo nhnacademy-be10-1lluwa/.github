@@ -136,6 +136,11 @@ https://book1lluwa.store
 
 ## ERD
 
+> 전체 도메인 ERD 설계는 아래 링크에서 확인 가능합니다.
+
+- [🌐 ERD Cloud](https://www.erdcloud.com/d/bqAZmQ8TgYuTMF3eW)
+
+
 ---
 
 # 📖 주요 기능
