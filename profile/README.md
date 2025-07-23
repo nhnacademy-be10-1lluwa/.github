@@ -87,10 +87,58 @@ https://book1lluwa.store
 
 ---
 
-## 🚀 CI/CD
+## 🚀 CI/CD & 운영 프로세스
+
+<p align="center">
+  <img src="/CI_CD.drawio.png" width="90%">
+</p>
+
+### 1. 이슈 및 라벨 관리
+- 모든 개발/수정/테스트/문서화 작업은 반드시 **GitHub Issue**를 먼저 생성후
+- 각 이슈에는 작업 목적에 맞는 **라벨**(refactor, chore, test ..등)을 지정해줍니다.
+  - 예시:
+    - refactor (리팩토링)
+    - chore (설정, 기타 작업)
+    - test (테스트)
+
+### 2. 브랜치 네이밍 규칙
+- **[라벨]/[이슈번호]-[작업명]** 형태로 브랜치를 생성합니다.
+  - 예:
+    - feature/123-coupon-policy-api
+    - bug/345-coupon-fix
+
+### 3. 커밋/PR 컨벤션
+- 커밋 메시지와 PR 제목/본문에는 **이슈번호**를 반드시 포함합니다.
+  - 예:
+    - `feat: 로그인 API 구현 (#123)`
+    - `fix: 주문 날짜 버그 수정 (#345)`
+
+### 4. 자동화(CI/CD) 및 품질 관리
+
+#### 4-1. **배포 자동화 (Deploy Workflow)**
+- 각 도메인별 `.github/workflows/deploy.yml` 파일로 관리합니다.
+- **main 브랜치에 PR이 머지될 때마다**
+  - Maven 빌드
+  - 서버에 jar 업로드
+  - 서비스 재시작이 자동으로 실행됩니다.
+
+#### 4-2. **코드 품질 분석 (SonarQube Workflow)**
+- `.github/workflows/sonarQube.yml`로 코드 품질과 테스트 커버리지 분석을 자동화합니다.
+- **develop 브랜치로 PR을 생성할 때마다**
+  - 빌드, 테스트, 커버리지 리포트 생성
+  - SonarQube 품질 분석이 자동으로 수행됩니다.
+
+#### 📚 **Git 협업/커밋 컨벤션 자세히 보기**
+- [Git 협업 규칙 (Notion)](https://www.notion.so/Git-20cf030dd17d80e3a498ee999a201ba9?source=copy_link)
+- [Git Commit Message Convention (Notion)](https://www.notion.so/Git-Commit-Message-Convention-20cf030dd17d8152ada7ee85a929403b?source=copy_link)
 
 ---
+
 ## ERD
+<img width="4790" height="2476" alt="BookStore #2" src="https://github.com/user-attachments/assets/45ebd4e3-66de-4cea-afef-e7ec3aa14225" />
+
+> 전체 도메인의 자세한 설계는 아래 링크를 통해 확인 가능합니다.
+- [🌐 ERD Cloud](https://www.erdcloud.com/d/bqAZmQ8TgYuTMF3eW)
 
 ---
 
@@ -146,6 +194,38 @@ https://book1lluwa.store
 
 ## 🛠️ Stack
 
+> CI/CD & 품질 관리
+<div>
+  <img src="https://img.shields.io/badge/GitHub%20Actions-2088FF?style=for-the-badge&logo=GitHub+Actions&logoColor=FFFFFF" alt="GitHubActions"/>
+  <img src="https://img.shields.io/badge/SonarQube-4E9BCD?style=for-the-badge&logo=sonarqube&logoColor=white" alt="SonarQube"/>
+  <img src="https://img.shields.io/badge/Apache%20Maven-C71A36?style=for-the-badge&logo=Apache+Maven&logoColor=FFFFFF" alt="ApacheMaven"/>
+</div>
+
+> Backend / Framework
+<div>
+  <img src="https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=Spring&logoColor=FFFFFF" alt="Spring"/>
+  <img src="https://img.shields.io/badge/Spring%20Boot-6DB33F?style=for-the-badge&logo=Spring+Boot&logoColor=FFFFFF" alt="SpringBoot"/>
+  <img src="https://img.shields.io/badge/JPA-6DB33F?style=for-the-badge&logo=spring&logoColor=white" alt="JPA"/>
+</div>
+
+> Database / Data
+<div>
+  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=MySQL&logoColor=FFFFFF" alt="MySql"/>
+  <img src="https://img.shields.io/badge/Redis-FF4438?style=for-the-badge&logo=Redis&logoColor=FFFFFF" alt="Redis"/>
+  <img src="https://img.shields.io/badge/Elasticsearch-005571?style=for-the-badge&logo=Elasticsearch&logoColor=FFFFFF" alt="ElasticSearch"/>
+  <img src="https://img.shields.io/badge/Logstash-005571?style=for-the-badge&logo=Logstash&logoColor=FFFFFF" alt="LogStash"/>
+  <img src="https://img.shields.io/badge/RabbitMQ-FF6600?style=for-the-badge&logo=RabbitMQ&logoColor=FFFFFF" alt="RabbitMq"/>
+</div>
+
+> Security / API
+<div>
+  <img src="https://img.shields.io/badge/JSON%20Web%20Tokens-000000?style=for-the-badge&logo=JSON+Web+Tokens&logoColor=FFFFFF" alt="JWT"/>
+</div>
+
+> Web Server / Infra
+<div>
+  <img src="https://img.shields.io/badge/NGINX-009639?style=for-the-badge&logo=NGINX&logoColor=FFFFFF" alt="Nginx"/>
+</div>
 
 ---
 
