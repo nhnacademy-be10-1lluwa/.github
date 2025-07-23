@@ -120,8 +120,7 @@ https://book1lluwa.store
 - **main 브랜치에 PR이 머지될 때마다**
   - Maven 빌드
   - 서버에 jar 업로드
-  - 서비스 재시작  
-  이 자동으로 실행됩니다.
+  - 서비스 재시작이 자동으로 실행됩니다.
 
 #### 4-2. **코드 품질 분석 (SonarQube Workflow)**
 - `.github/workflows/sonarQube.yml`로 코드 품질과 테스트 커버리지 분석을 자동화합니다.
