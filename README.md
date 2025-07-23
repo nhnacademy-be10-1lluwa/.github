@@ -87,9 +87,54 @@ https://book1lluwa.store
 
 ---
 
-## 🚀 CI/CD
+## 🚀 CI/CD & 운영 프로세스
+
+<p align="center">
+  <img src="/CI_CD.drawio.png" width="90%">
+</p>
+
+### 1. 이슈 및 라벨 관리
+- 모든 개발/수정/테스트/문서화 작업은 반드시 **GitHub Issue**를 먼저 생성후
+- 각 이슈에는 작업 목적에 맞는 **라벨**(refactor, chore, test ..등)을 지정해줍니다.
+  - 예시:
+    - refactor (리팩토링)
+    - chore (설정, 기타 작업)
+    - test (테스트)
+
+### 2. 브랜치 네이밍 규칙
+- **[라벨]/[이슈번호]-[작업명]** 형태로 브랜치를 생성합니다.
+  - 예:
+    - feature/123-coupon-policy-api
+    - bug/345-coupon-fix
+
+### 3. 커밋/PR 컨벤션
+- 커밋 메시지와 PR 제목/본문에는 **이슈번호**를 반드시 포함합니다.
+  - 예:
+    - `feat: 로그인 API 구현 (#123)`
+    - `fix: 주문 날짜 버그 수정 (#345)`
+
+### 4. 자동화(CI/CD) 및 품질 관리
+
+#### 4-1. **배포 자동화 (Deploy Workflow)**
+- 각 도메인별 `.github/workflows/deploy.yml` 파일로 관리합니다.
+- **main 브랜치에 PR이 머지될 때마다**
+  - Maven 빌드
+  - 서버에 jar 업로드
+  - 서비스 재시작  
+  이 자동으로 실행됩니다.
+
+#### 4-2. **코드 품질 분석 (SonarQube Workflow)**
+- `.github/workflows/sonarQube.yml`로 코드 품질과 테스트 커버리지 분석을 자동화합니다.
+- **develop 브랜치로 PR을 생성할 때마다**
+  - 빌드, 테스트, 커버리지 리포트 생성
+  - SonarQube 품질 분석이 자동으로 수행됩니다.
+
+#### 📚 **Git 협업/커밋 컨벤션 자세히 보기**
+- [Git 협업 규칙 (Notion)](https://www.notion.so/Git-20cf030dd17d80e3a498ee999a201ba9?source=copy_link)
+- [Git Commit Message Convention (Notion)](https://www.notion.so/Git-Commit-Message-Convention-20cf030dd17d8152ada7ee85a929403b?source=copy_link)
 
 ---
+
 ## ERD
 
 ---
