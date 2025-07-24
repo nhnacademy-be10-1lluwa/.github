@@ -91,7 +91,7 @@ https://book1lluwa.store
 
 
 > ###### 1. 클라이언트의 요청은 Cloud Flare와 Nginx를 통해 프론트의 포트에 보내지게 되어 있습니다.
-> ###### 2. Front의 로그인은 확장성을 고려하여 oAuth를 사용하여 Payco 로그인을 지원합니다. 또한, Spring Boot Application 실행 시 베스트셀러의 경우 알라딘 API를 이용해<br/> &nbsp;&nbsp;&nbsp;&nbsp;도서 순위를 받아와 Redis에 저장하며 Category의 경우 DB에서 불러와 Redis에 일정 시간 저장한다.
+> ###### 2. Front의 로그인은 확장성을 고려하여 oAuth를 사용하여 Payco 로그인을 지원합니다. 또한, Spring Boot Application 실행 시<br/> &nbsp;&nbsp;&nbsp;&nbsp; 베스트셀러의 경우 알라딘 API를 이용해 도서 순위를 받아와 Redis에 저장하며 Category의 경우 DB에서 불러와 Redis에 일정 시간 저장한다.
 > ###### 3. Eureka의 경우 현재 실행 중인 서비스를 등록하고 관리하는 역할로 만들었습니다
 > ###### 4. Gateway는 각 서비스의 모든 요청을 받아서 Eureka에 등록된 적절한 서비스를 이름으로 찾아 전달을 해주며 JWT 토큰을 검증하는 역활을 맡았습니다.
 > ###### 5. Auth의 경우 JWT 토큰을 발급 및 재발급을 하며 Gateway에서 검증 후 Front에서 인증,인가를 진행 후 Session에 access 토큰을 저장합니다.
