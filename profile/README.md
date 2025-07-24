@@ -163,19 +163,25 @@ https://book1lluwa.store
 ### 📮 주소
 * 담당자: 최가은
   - 주소 CRUD 구현
+  - 주소 API를 사용하여 실 존재하는 주소지 등록
 
 ### 📖 도서
 * 담당자: 최혁
   - 도서 CRUD 구현
-  - 알라딘 API 사용
+  - 알라딘 API 사용하여 도서 정보를 등록
+  - MinioStorage를 통한 이미지 등록
+  - Pagenation 추가
 
 ### 🔍 검색(Elastic Search)
 * 담당자: 최혁
-  - Elasticsearch을 이용한 검색
+  - Elasticsearch을 이용한 도서 통합 검색
+  - QueryDsl로 동적/복합 쿼리 자동 생성 및 관리
+  - 검색 결과 Pagenation 처리
 
 ### ☑️ 카테고리
 * 담당자: 최혁
   - 카테고리 CRUD 구현
+  - 3계층으로 카테고리 분류
 
 ### 🛒 장바구니
 * 담당자: 신찬섭
