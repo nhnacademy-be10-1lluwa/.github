@@ -85,6 +85,20 @@ https://book1lluwa.store
 
 ## 🌐 System Architecture
 
+<p align="center">
+    <img src="/profile/img.drawio (1).png" width="90%">
+</p>
+
+
+> ###### 1. 클라이언트의 요청은 Cloud Flare와 Nginx를 거쳐 Front 서버로 전달됩니다.
+> ###### 2. 로그인은 Payco OAuth2 방식을 지원하여 확장성과 외부 인증 연계를 고려하였으며, Spring Boot 애플리케이션 실행 시:
+> ###### &nbsp;&nbsp;&nbsp;&nbsp; – 베스트셀러 도서 정보는 알라딘 Open API를 통해 조회 후 Redis에 캐싱하고, <br/> &nbsp;&nbsp;&nbsp;&nbsp; – 도서 카테고리 정보는 DB에서 조회한 뒤 일정 시간 동안 Redis에 저장합니다.
+> ###### 3. Eureka Server는 각 서비스를 중앙에서 관리하고 연결하기 위한 서비스 디스커버리 역할을 수행합니다.
+> ###### 4. 모든 서비스는 이중 인스턴스로 구성되어 Eureka에 등록되며, Gateway는 이를 기반으로 로드밸런싱 및 라우팅을 수행합니다.
+> ###### 5.  Gateway는 Eureka를 통해 각 서비스로 클라이언트 요청을 라우팅하며, 내부 요청 시 JWT 토큰을 검증하고, <br/> &nbsp;&nbsp;&nbsp;&nbsp; 사용자 정보를 헤더에 담아 다운스트림 서비스로 전달하는 역할도 수행합니다.
+> ###### 6. Auth Service는 사용자 인증, JWT 토큰 발급 및 재발급을 담당하며, 발급된 토큰은 Front에 전달된 후 쿠키에 저장되어 인증 수단으로 활용됩니다.
+> ###### 7. 회원, 상품, 결제, 주문 등 주요 도메인의 데이터는 MySQL을 통해 저장 및 관리됩니다.
+> 
 ---
 
 ## 🚀 CI/CD & 운영 프로세스
@@ -146,49 +160,104 @@ https://book1lluwa.store
 
 ### 🏗️ 인프라
 * 담당자: 배성환
+  - NHN Cloud 기반 인스턴스 운영 및 도메인 연결
+  - GitHub Actions를 활용한 CI/CD 자동화 (빌드, 테스트, 배포)
+  - Eureka 기반 서비스 등록, 동적 라우팅 적용
+  - Logstash로 서비스 실시간 로그 수집/분석
 
 ### 🖥️ 프론트(figma ,html, css)
 * 담당자: 김강길
+  - 피그마 설계 및 구조 설계
+  - html 레이아웃 템플릿 제작
+  - 공통 css 구현
+  - Thymeleaf를 이용한 서버사이드 랜더링 및 예외처리
+  - OpenFeign통신 클라이언트 설계 및 예외처리
+  - WireMock, Mockito, WebMvcTest를 이용한 테스트 환경 설계
 
 ### 📮 주소
 * 담당자: 최가은
-
+  - 회원별 다중 배송지(주소) CRUD 구현
+  - 외부 주소 API연동으로 실제 주소 검증
+  - 주문 결제시 기본/선택 주소 지정
+  
 ### 📖 도서
 * 담당자: 최혁
+  - 도서 CRUD 구현
+  - 알라딘 API 사용하여 도서 정보를 등록
+  - MinioStorage를 통한 이미지 등록
+  - Pagenation 추가
 
 ### 🔍 검색(Elastic Search)
 * 담당자: 최혁
+  - Elasticsearch을 이용한 도서 통합 검색
+  - QueryDsl로 동적/복합 쿼리 자동 생성 및 관리
+  - 검색 결과 Pagenation 처리
 
 ### ☑️ 카테고리
 * 담당자: 최혁
+  - 카테고리 CRUD 구현
+  - 3계층으로 카테고리 분류
 
 ### 🛒 장바구니
 * 담당자: 신찬섭
+  - 장바구니 CRUD 구현
 
 ### 🎟️ 쿠폰
 * 담당자: 최정환
 
 ### 👤 회원
-* 담당자: 최가은
+* 담당자: 배성환, 최가은
+  - 회원 CRUD 구현
+  - PAYCO를 통한 로그인(OAuth2) 지원
+  - DooraySender를 통한 휴먼회원 해제
+  - 비회원 로그인 구현 (주문번호를 기반으로 로그인)
+  - JWT 기반 회원 인증/인가 체계 구현
+  - 회원 상태(정상/휴먼/탈퇴) 관리
+  - DB 비밀번호 암호화(BCrypt 적용)
 
 ### 📱 주문
 * 담당자: 박진호
+  - 주문 CRUD 구현
+  - SpringBatch를 활용한 대량 데이터 업데이트 처리
+  - 회원/비회원 주문/조회 기능구현
+  - 주문 플로우 (다양한 흐름 지원)
+  - 포장 옵션 선택
+  - 배송비 정책
+  - 주문 상태 관리
+  - 주문 처리(관리자)
+  - 반품/환불 처리 및 결제 취소 구현
 
 ### 💳 결제
 * 담당자: 배성환
+  - Toss Payments API 사용
+  - 결제 시 쿠폰, 포인트 정책을 기반으로 사용 적용
+  - 결제 결과 주문 상태와 연동
+ 
 
 ### 💰 포인트
 * 담당자: 최가은
+  - 회원 적립금(포인트) CRUD 구현
+  - 결제시 포인트 사용/적립 로직 구현
+  - 포인트 소멸/유효기간 확인(마이페이지)
+  - 등급에 따른 적립율 구현
 
 ### 📝 리뷰
 * 담당자: 오준현
+  - 리뷰 CRUD 구현
+  - 사용자가 주문한 도서에 한하여 리뷰 작성기능 구현
+  - 별점, 사진 첨부 등 다양한 리뷰 유형 지원
 
 ### 🏷️ 태그
+* 담당자: 최혁
+  - 도서/카테고리별 자유 태그 추가 및 검색 지원
 
 ### ❤️ 좋아요
-
+* 담당자: 오준현
+  - 좋아요 CRUD 구현
+  - 회원별 좋아요 목록 저장 및 조회
 ---
 ## 📄 팀내 자료
+- 🎨 [Figma Design](https://www.figma.com/community/file/1514522679983172396)
 
 ---
 
@@ -197,7 +266,9 @@ https://book1lluwa.store
 > CI/CD & 품질 관리
 <div>
   <img src="https://img.shields.io/badge/GitHub%20Actions-2088FF?style=for-the-badge&logo=GitHub+Actions&logoColor=FFFFFF" alt="GitHubActions"/>
+    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white" alt="GitHub"/>
   <img src="https://img.shields.io/badge/SonarQube-4E9BCD?style=for-the-badge&logo=sonarqube&logoColor=white" alt="SonarQube"/>
+    <img src="https://img.shields.io/badge/Spring%20Cloud-00ADEF?style=for-the-badge&logo=Spring&logoColor=FFFFFF" alt="SpringCloud"/>
   <img src="https://img.shields.io/badge/Apache%20Maven-C71A36?style=for-the-badge&logo=Apache+Maven&logoColor=FFFFFF" alt="ApacheMaven"/>
 </div>
 
@@ -206,6 +277,17 @@ https://book1lluwa.store
   <img src="https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=Spring&logoColor=FFFFFF" alt="Spring"/>
   <img src="https://img.shields.io/badge/Spring%20Boot-6DB33F?style=for-the-badge&logo=Spring+Boot&logoColor=FFFFFF" alt="SpringBoot"/>
   <img src="https://img.shields.io/badge/JPA-6DB33F?style=for-the-badge&logo=spring&logoColor=white" alt="JPA"/>
+    <img src="https://img.shields.io/badge/OpenFeign-0089BF?style=for-the-badge&logo=OpenFeign&logoColor=white" alt="OpenFeign"/>
+    <img src="https://img.shields.io/badge/Spring%20Batch-6DB33F?style=for-the-badge&logo=Spring&logoColor=FFFFFF" alt="Spring Batch"/>
+    <img src="https://img.shields.io/badge/Swagger-222222?style=for-the-badge&logo=Swagger&logoColor=85EA2D" alt="Swagger"/>
+</div>
+
+> Front
+<div>
+    <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=Figma&logoColor=FFFFFF" alt="Figma"/>
+    <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=HTML5&logoColor=FFFFFF" alt="HTML5"/>
+    <img src="https://img.shields.io/badge/CSS-663399?style=for-the-badge&logo=CSS&logoColor=FFFFFF" alt="CSS"/>
+    <img src="https://img.shields.io/badge/JavaScript-222222?style=for-the-badge&logo=JavaScript&logoColor=F7DF1E" alt="JavaScript"/>
 </div>
 
 > Database / Data
@@ -219,12 +301,20 @@ https://book1lluwa.store
 
 > Security / API
 <div>
+  <img src="https://img.shields.io/badge/Spring%20Security-6DB33F?style=for-the-badge&logo=Spring+Security&logoColor=FFFFFF" alt="SpringSecurity"/>
   <img src="https://img.shields.io/badge/JSON%20Web%20Tokens-000000?style=for-the-badge&logo=JSON+Web+Tokens&logoColor=FFFFFF" alt="JWT"/>
 </div>
 
 > Web Server / Infra
 <div>
   <img src="https://img.shields.io/badge/NGINX-009639?style=for-the-badge&logo=NGINX&logoColor=FFFFFF" alt="Nginx"/>
+</div>
+
+> Test Code
+<div>
+    <img src="https://img.shields.io/badge/JUnit5-25A162?style=for-the-badge&logo=JUnit5&logoColor=FFFFFF" alt="Junit5"/>
+    <img src="https://img.shields.io/badge/WireMock-7B4AE2?style=for-the-badge&logo=wiremock&logoColor=white" alt="WireMock"/>
+    <img src="https://img.shields.io/badge/Mockito-4CAF50?style=for-the-badge&logo=mockito&logoColor=white" alt="Mockito"/>
 </div>
 
 ---
