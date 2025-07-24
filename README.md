@@ -90,7 +90,7 @@ https://book1lluwa.store
 ## 🚀 CI/CD & 운영 프로세스
 
 <p align="center">
-  <img src="/CI_CD.drawio.png" width="90%">
+  <img src="/system.drawio.png" width="90%">
 </p>
 
 ### 1. 이슈 및 라벨 관리
