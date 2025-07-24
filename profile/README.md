@@ -155,7 +155,9 @@ https://book1lluwa.store
 * 담당자: 김강길
   - 피그마 설계 및 구조 설계
   - html, css 구현
-  - Thymeleaf를 이용한 서버사이드 랜더링
+  - Thymeleaf를 이용한 서버사이드 랜더링 및 템플릿 설계
+  - OpenFeign통신 클라이언트 설계 및 예외처리
+  - WireMock을 통한 테스트
 
 ### 📮 주소
 * 담당자: 최가은
