@@ -87,7 +87,8 @@ https://book1lluwa.store
 ## 🌐 System Architecture
 
 <p align="center">
-    <img width="2537" height="1399" alt="system drawio" src="https://github.com/user-attachments/assets/afb7e0a5-a7c7-47c1-9f41-d9378ade95e1" />
+    <img width="2543" height="1398" alt="final drawio" src="https://github.com/user-attachments/assets/db2f6e29-f993-4aa0-8338-2c846ac877f0" />
+
 </p>
 
 
