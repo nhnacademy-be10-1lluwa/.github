@@ -146,7 +146,10 @@ https://book1lluwa.store
 
 ### 🏗️ 인프라
 * 담당자: 배성환
-  - CI / CD 환경 구축
+  - NHN Cloud 기반 인스턴스 운영 및 도메인 연결
+  - GitHub Actions를 활용한 CI/CD 자동화 (빌드, 테스트, 배포)
+  - Eureka 기반 서비스 등록, 동적 라우팅 적용
+  - Logstash로 서비스 실시간 로그 수집/분석
 
 ### 🖥️ 프론트(figma ,html, css)
 * 담당자: 김강길
