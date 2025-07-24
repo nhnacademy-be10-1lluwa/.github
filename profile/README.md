@@ -109,8 +109,9 @@ https://book1lluwa.store
 
 ### 1. 이슈 및 라벨 관리
 - 모든 개발/수정/테스트/문서화 작업은 반드시 **GitHub Issue**를 먼저 생성후
-- 각 이슈에는 작업 목적에 맞는 **라벨**(refactor, chore, test ..등)을 지정해줍니다.
+- 각 이슈에는 작업 목적에 맞는 **라벨**(feat, refactor, chore, test ..등)을 지정해줍니다.
   - 예시:
+    - feat (기능 구현)
     - refactor (리팩토링)
     - chore (설정, 기타 작업)
     - test (테스트)
