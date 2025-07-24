@@ -172,8 +172,7 @@ https://book1lluwa.store
   - GitHub Actions를 활용한 CI/CD 자동화 (빌드, 테스트, 무중단 배포)
   - Eureka 기반 서비스 등록, 동적 라우팅 적용
   - Spring Cloud Config Server를 통한 설정 중앙 관리 및 Git 연동 구성
-  - Nginx Reverse Proxy 및 SSL 적용 설정으로 외부 요청 처리 최적화
-  - 무중단 배포를 위한 다중 인스턴스 운영 및 헬스 체크 기반 롤링 배포 스크립트 구현
+  - Nginx Reverse Proxy 설정으로 외부 요청 처리 최적화
 
 
 ### 🖥️ 프론트(figma ,html, css)
