@@ -185,11 +185,20 @@ https://book1lluwa.store
   - OpenFeign통신 클라이언트 설계 및 예외처리
   - WireMock, Mockito, WebMvcTest를 이용한 테스트 환경 설계
 
+ ### 🔐 인증/인가
+* 담당자: 배성환
+  - OAuth2 기반 PAYCO 소셜 로그인 및 비회원 인증 흐름 설계
+  - JWT 발급/재발급 및 유효성 검증 로직 구현 (Access/Refresh Token 분리)
+  - Gateway에서 JWT 검증 후 사용자 정보를 헤더로 전달하는 필터 설계
+  - Role 기반 권한 제어 (RBAC)
+
+
 ### 📮 주소
 * 담당자: 최가은
   - 회원별 다중 배송지(주소) CRUD 구현
   - 외부 주소 API연동으로 실제 주소 검증
   - 주문 결제시 기본/선택 주소 지정
+
   
 ### 📖 도서
 * 담당자: 최혁
@@ -219,10 +228,8 @@ https://book1lluwa.store
 ### 👤 회원
 * 담당자: 배성환, 최가은
   - 회원 CRUD 구현
-  - PAYCO를 통한 로그인(OAuth2) 지원
   - DooraySender를 통한 휴먼회원 해제
   - 비회원 로그인 구현 (주문번호를 기반으로 로그인)
-  - JWT 기반 회원 인증/인가 체계 구현
   - 회원 상태(정상/휴먼/탈퇴) 관리
   - DB 비밀번호 암호화(BCrypt 적용)
 
