@@ -169,10 +169,10 @@ https://book1lluwa.store
 ### 🏗️ 인프라
 * 담당자: 배성환
   - MSA 기반 아키텍처 설계 및 도메인 운영
-  - GitHub Actions를 활용한 CI/CD 자동화 (빌드, 테스트, 무중단 배포)
-  - Eureka 기반 서비스 등록, 동적 라우팅 적용
-  - Spring Cloud Config Server를 통한 설정 중앙 관리 및 Git 연동 구성
-  - Nginx Reverse Proxy 설정으로 외부 요청 처리 최적화
+  - GitHub Actions 기반 CI/CD 자동화 및 무중단 배포 스크립트 구현
+  - Spring Cloud Config Server를 통한 설정 중앙 관리
+  - Swagger 적용 및 API 문서 자동화 설정
+  - Logback 설정을 통한 서비스별 로그 관리 및 포맷 통일
 
 
 ### 🖥️ 프론트(figma ,html, css)
