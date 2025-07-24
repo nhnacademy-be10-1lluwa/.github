@@ -278,6 +278,7 @@ https://book1lluwa.store
   <img src="https://img.shields.io/badge/JPA-6DB33F?style=for-the-badge&logo=spring&logoColor=white" alt="JPA"/>
     <img src="https://img.shields.io/badge/OpenFeign-0089BF?style=for-the-badge&logo=OpenFeign&logoColor=white" alt="OpenFeign"/>
     <img src="https://img.shields.io/badge/Spring%20Batch-6DB33F?style=for-the-badge&logo=Spring&logoColor=FFFFFF" alt="Spring Batch"/>
+    <img src="https://img.shields.io/badge/Swagger-222222?style=for-the-badge&logo=Swagger&logoColor=85EA2D" alt="Swagger"/>
 </div>
 
 > Front
