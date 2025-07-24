@@ -168,10 +168,13 @@ https://book1lluwa.store
 
 ### 🏗️ 인프라
 * 담당자: 배성환
-  - NHN Cloud 기반 인스턴스 운영 및 도메인 연결
-  - GitHub Actions를 활용한 CI/CD 자동화 (빌드, 테스트, 배포)
+  - MSA 기반 아키텍처 설계 및 도메인 운영
+  - GitHub Actions를 활용한 CI/CD 자동화 (빌드, 테스트, 무중단 배포)
   - Eureka 기반 서비스 등록, 동적 라우팅 적용
-  - Logstash로 서비스 실시간 로그 수집/분석
+  - Spring Cloud Config Server를 통한 설정 중앙 관리 및 Git 연동 구성
+  - Nginx Reverse Proxy 및 SSL 적용 설정으로 외부 요청 처리 최적화
+  - 무중단 배포를 위한 다중 인스턴스 운영 및 헬스 체크 기반 롤링 배포 스크립트 구현
+
 
 ### 🖥️ 프론트(figma ,html, css)
 * 담당자: 김강길
