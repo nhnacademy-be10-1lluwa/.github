@@ -86,25 +86,25 @@ https://book1lluwa.store
 ## 🌐 System Architecture
 
 <p align="center">
-    <img src="/profile/img.drawio (1).png" width="90%">
+    <img width="2537" height="1399" alt="system drawio" src="https://github.com/user-attachments/assets/afb7e0a5-a7c7-47c1-9f41-d9378ade95e1" />
 </p>
 
 
-> ###### 1. 클라이언트의 요청은 Cloud Flare와 Nginx를 통해 프론트의 포트에 보내지게 되어 있습니다.
-> ###### 2. Front의 로그인은 확장성을 고려하여 oAuth를 사용하여 Payco 로그인을 지원합니다. 또한, Spring Boot Application 실행 시<br/> &nbsp;&nbsp;&nbsp;&nbsp; 베스트셀러의 경우 알라딘 API를 이용해 도서 순위를 받아와 Redis에 저장하며 Category의 경우 DB에서 불러와 Redis에 일정 시간 저장하도록 만들었습니다.
-> ###### 3. Eureka의 경우 현재 실행 중인 서비스를 등록하고 관리하는 역할로 만들었습니다
-> ###### 4. Gateway는 각 서비스의 모든 요청을 받아서 Eureka에 등록된 적절한 서비스를 이름으로 찾아 전달을 해주며 JWT 토큰을 검증하는 역활을 맡았습니다.
-> ###### 5. Auth의 경우 JWT 토큰을 발급 및 재발급을 하며 Gateway에서 검증 후 Front에서 인증,인가를 진행 후 Session에 access 토큰을 저장합니다.
-> ###### 6. 각 서비스는 2개의 포트로 구성되어있으며, Gateway를 통해 보내지고 있습니다.
-> ###### 7. 회원, 상품, 결제, 주문과 같은 주요 서비스의 정보들은 MySQL에 정보를 저장하고 관리를 하고 있습니다.
-
-
+> ###### 1. 클라이언트의 요청은 Cloud Flare와 Nginx를 거쳐 Front 서버로 전달됩니다.
+> ###### 2. 로그인은 Payco OAuth2 방식을 지원하여 확장성과 외부 인증 연계를 고려하였으며, Spring Boot 애플리케이션 실행 시:
+> ###### &nbsp;&nbsp;&nbsp;&nbsp; – 베스트셀러 도서 정보는 알라딘 Open API를 통해 조회 후 Redis에 캐싱하고, <br/> &nbsp;&nbsp;&nbsp;&nbsp; – 도서 카테고리 정보는 DB에서 조회한 뒤 일정 시간 동안 Redis에 저장합니다.
+> ###### 3. Eureka Server는 각 서비스를 중앙에서 관리하고 연결하기 위한 서비스 디스커버리 역할을 수행합니다.
+> ###### 4. 모든 서비스는 이중 인스턴스로 구성되어 Eureka에 등록되며, Gateway는 이를 기반으로 로드밸런싱 및 라우팅을 수행합니다.
+> ###### 5.  Gateway는 Eureka를 통해 각 서비스로 클라이언트 요청을 라우팅하며, 내부 요청 시 JWT 토큰을 검증하고, <br/> &nbsp;&nbsp;&nbsp;&nbsp; 사용자 정보를 헤더에 담아 다운스트림 서비스로 전달하는 역할도 수행합니다.
+> ###### 6. Auth Service는 사용자 인증, JWT 토큰 발급 및 재발급을 담당하며, 발급된 토큰은 Front에 전달된 후 쿠키에 저장되어 인증 수단으로 활용됩니다.
+> ###### 7. 회원, 상품, 결제, 주문 등 주요 도메인의 데이터는 MySQL을 통해 저장 및 관리됩니다.
+> 
 ---
 
 ## 🚀 CI/CD & 운영 프로세스
 
 <p align="center">
-  <img src="/CI_CD.drawio.png" width="90%">
+  <img width="1881" height="419" alt="CI_CD drawio" src="https://github.com/user-attachments/assets/f6243c1d-b8cb-4f29-8beb-f016bf996e96" />
 </p>
 
 ### 1. 이슈 및 라벨 관리
