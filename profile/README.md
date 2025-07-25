@@ -300,7 +300,7 @@ https://book1lluwa.store
 - 🌐 [ERD Cloud](https://www.erdcloud.com/d/bqAZmQ8TgYuTMF3eW)
 - 📋 [스크럼 회의록](https://www.notion.so/20cf030dd17d81acbf93df0938b60f9d?pvs=25)
 - 🔎 [Elastic Search](https://hill-band-b79.notion.site/Elastic-Search-238dd0c3a889808f9fb9ffae4e9c213c?source=copy_link)
-- 🐰 [Rabbit MQ](https://www.notion.so/RabbitMQ-23b5c23e942f80c88474dc459f21d5ed?v=1b95c23e942f8121b0e2000c57156735&source=copy_link)
+- 🐰 [Rabbit MQ](https://bottlenose-balloon-0b4.notion.site/RabbitMQ-23b5c23e942f80c88474dc459f21d5ed?source=copy_link)
 
 ---
 
