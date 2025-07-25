@@ -301,7 +301,7 @@ https://book1lluwa.store
 - 📋 [스크럼 회의록](https://coconut-hedge-519.notion.site/20cf030dd17d81acbf93df0938b60f9d?source=copy_link)
 - 🔎 [Elastic Search](https://hill-band-b79.notion.site/Elastic-Search-238dd0c3a889808f9fb9ffae4e9c213c?source=copy_link)
 - 🐰 [Rabbit MQ](https://bottlenose-balloon-0b4.notion.site/RabbitMQ-23b5c23e942f80c88474dc459f21d5ed?source=copy_link)
-
+- 🔐 [IsLoggedIn](https://riveroad-workspace.notion.site/IsLoggedIn-20e127c5895d8028808bff22e404ba89?source=copy_link)
 ---
 
 ## 🛠️ Stack
