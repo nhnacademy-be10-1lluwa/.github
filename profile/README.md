@@ -4,7 +4,7 @@
 
 프로젝트 기간: 2025.05 ~ 2025.07
 ####
-🖥️ [프로젝트 소개 영상 바로가기](https://drive.google.com/file/d/132-0HXJzaPxaioUk9SkhnUUFvQFq60hd/view?usp=drive_link)
+🖥️ [프로젝트 소개 영상 바로가기](https://drive.google.com/file/d/13nH79RJovwXVnmNvtLtTJjAbM6eoa02J/view?usp=drive_link)
 ## 🎯 주요 목적
 - MSA 아키텍처 학습 및 적용
 - CI/CD 및 무중단 배포 환경 구축 경험
