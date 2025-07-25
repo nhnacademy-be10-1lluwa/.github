@@ -293,6 +293,7 @@ https://book1lluwa.store
 ---
 ## 📄 팀내 자료
 - 🎨 [Figma Design](https://www.figma.com/community/file/1514522679983172396)
+- 🚨 [커스텀 예외처리 정책](https://www.notion.so/214f030dd17d80e09b6df0b08169abf6?source=copy_link)
 - 🌐 [ERD Cloud](https://www.erdcloud.com/d/bqAZmQ8TgYuTMF3eW)
 - 📋 [스크럼 회의록](https://www.notion.so/20cf030dd17d81acbf93df0938b60f9d?pvs=25)
 - 🐰 [Rabbit MQ](https://www.notion.so/RabbitMQ-23b5c23e942f80c88474dc459f21d5ed?v=1b95c23e942f8121b0e2000c57156735&source=copy_link)
