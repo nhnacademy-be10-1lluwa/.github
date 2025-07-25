@@ -159,10 +159,8 @@ https://book1lluwa.store
 ---
 
 ## ERD
-<img width="4790" height="2476" alt="BookStore #2" src="https://github.com/user-attachments/assets/45ebd4e3-66de-4cea-afef-e7ec3aa14225" />
 
-> 전체 도메인의 자세한 설계는 아래 링크를 통해 확인 가능합니다.
-- [🌐 ERD Cloud](https://www.erdcloud.com/d/bqAZmQ8TgYuTMF3eW)
+<img width="4790" height="2476" alt="BookStore #2" src="https://github.com/user-attachments/assets/45ebd4e3-66de-4cea-afef-e7ec3aa14225" />
 
 ---
 
@@ -278,6 +276,8 @@ https://book1lluwa.store
 ---
 ## 📄 팀내 자료
 - 🎨 [Figma Design](https://www.figma.com/community/file/1514522679983172396)
+- 🌐 [ERD Cloud](https://www.erdcloud.com/d/bqAZmQ8TgYuTMF3eW)
+- 📋 [스크럼 회의록](https://www.notion.so/20cf030dd17d81acbf93df0938b60f9d?pvs=25)
 
 ---
 
