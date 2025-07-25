@@ -296,9 +296,9 @@ https://book1lluwa.store
 ---
 ## 📄 팀내 자료
 - 🎨 [Figma Design](https://www.figma.com/community/file/1514522679983172396)
-- 🚨 [커스텀 예외처리 정책](https://www.notion.so/214f030dd17d80e09b6df0b08169abf6?source=copy_link)
+- 🚨 [커스텀 예외처리 정책](https://coconut-hedge-519.notion.site/214f030dd17d80e09b6df0b08169abf6?source=copy_link)
 - 🌐 [ERD Cloud](https://www.erdcloud.com/d/bqAZmQ8TgYuTMF3eW)
-- 📋 [스크럼 회의록](https://www.notion.so/20cf030dd17d81acbf93df0938b60f9d?pvs=25)
+- 📋 [스크럼 회의록](https://coconut-hedge-519.notion.site/20cf030dd17d81acbf93df0938b60f9d?source=copy_link)
 - 🔎 [Elastic Search](https://hill-band-b79.notion.site/Elastic-Search-238dd0c3a889808f9fb9ffae4e9c213c?source=copy_link)
 - 🐰 [Rabbit MQ](https://bottlenose-balloon-0b4.notion.site/RabbitMQ-23b5c23e942f80c88474dc459f21d5ed?source=copy_link)
 
