@@ -165,6 +165,12 @@ https://book1lluwa.store
 
 ---
 
+## Kanban Board
+
+<img width="2206" height="1217" alt="image" src="https://github.com/user-attachments/assets/6891af2b-1b57-4ddc-bae3-e5c153e3e505" />
+
+---
+
 # 📖 주요 기능
 
 ### 🏗️ 인프라
