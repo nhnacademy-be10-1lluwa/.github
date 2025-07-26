@@ -211,7 +211,7 @@ https://book1lluwa.store
   - 도서 CRUD 구현
   - 외부 API를 활용(도서 등록 과정, 인기도서 목록)
   - Redis를 활용한 외부 API 호출을 통한 인기도서 목록 데이터 캐싱 처리
-  - MinioStorage를 통한 이미지 등록
+  - MinIO 객체 스토리지를 활용해 이미지 업로드 및 URL 기반 관리를 구현
   - Pagenation 추가
 
 ### 🔍 검색(Elastic Search)
@@ -288,6 +288,7 @@ https://book1lluwa.store
   - 사용자가 주문한 도서에 한하여 리뷰 작성기능 구현
   - 리뷰 좋아요 기능 구현
   - 별점, 사진 첨부 등 다양한 리뷰 유형 지원
+  - MinIO 객체 스토리지를 활용해 이미지 업로드 및 URL 기반 관리를 구현
 
 ### 🏷️ 태그
 * 담당자: 최혁
