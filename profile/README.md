@@ -209,7 +209,8 @@ https://book1lluwa.store
 ### 📖 도서
 * 담당자: 최혁
   - 도서 CRUD 구현
-  - 외부 API를 활용
+  - 외부 API를 활용(도서 등록 과정, 인기도서 목록)
+  - Redis를 활용한 외부 API 호출을 통한 인기도서 목록 데이터 캐싱 처리
   - MinioStorage를 통한 이미지 등록
   - Pagenation 추가
 
