@@ -3,6 +3,8 @@
 실제 서비스 환경을 고려해 회원가입부터 주문, 결제, 리뷰 작성, 쿠폰 적용까지의 전자상거래 전 과정을 분산 아키텍처로 구성하였으며, JWT 인증, Redis, Toss Payments API 연동, 무중단 배포 환경 구성(CI/CD) 등 실무와 유사한 환경을 경험할 수 있도록 설계하였습니다.
 
 프로젝트 기간: 2025.05 ~ 2025.07
+####
+📎 [프로젝트 소개 영상 바로가기](https://youtu.be/Mm8H87yzw7I)
 ## 🎯 주요 목적
 - MSA 아키텍처 학습 및 적용
 - CI/CD 및 무중단 배포 환경 구축 경험
@@ -13,7 +15,6 @@
 ---
 ### 📖 도메인
 https://book1lluwa.store
-
 ---
 
 ## 🧑‍🤝‍🧑 팀원
@@ -87,7 +88,8 @@ https://book1lluwa.store
 ## 🌐 System Architecture
 
 <p align="center">
-    <img width="2543" height="1398" alt="final drawio" src="https://github.com/user-attachments/assets/40e370e1-384a-4b37-b019-aac52e5f8fb8" />
+    <img width="2724" height="1396" alt="system drawio 오전 9 45 09" src="https://github.com/user-attachments/assets/c74572a6-0a3c-4eef-ad5b-3ca6056ce301" />
+
 </p>
 
 
@@ -158,10 +160,14 @@ https://book1lluwa.store
 ---
 
 ## ERD
+
 <img width="4790" height="2476" alt="BookStore #2" src="https://github.com/user-attachments/assets/45ebd4e3-66de-4cea-afef-e7ec3aa14225" />
 
-> 전체 도메인의 자세한 설계는 아래 링크를 통해 확인 가능합니다.
-- [🌐 ERD Cloud](https://www.erdcloud.com/d/bqAZmQ8TgYuTMF3eW)
+---
+
+## Kanban Board
+
+<img width="2206" height="1217" alt="image" src="https://github.com/user-attachments/assets/6891af2b-1b57-4ddc-bae3-e5c153e3e505" />
 
 ---
 
@@ -196,42 +202,56 @@ https://book1lluwa.store
 ### 📮 주소
 * 담당자: 최가은
   - 회원별 다중 배송지(주소) CRUD 구현
-  - 외부 주소 API연동으로 실제 주소 검증
+  - 다음 주소 API연동으로 실제 주소 검증
   - 주문 결제시 기본/선택 주소 지정
 
   
 ### 📖 도서
 * 담당자: 최혁
   - 도서 CRUD 구현
-  - 알라딘 API 사용하여 도서 정보를 등록
-  - MinioStorage를 통한 이미지 등록
-  - Pagenation 추가
+  - Aladin API 활용(도서 등록 과정, 인기도서 목록)
+  - Redis를 활용한 외부 API 호출을 통한 인기도서 목록 데이터 캐싱 처리
+  - MinIO 객체 스토리지를 활용해 이미지 업로드 및 URL 기반 관리를 구현
+  - Pagenation 및 정렬 추가
 
 ### 🔍 검색(Elastic Search)
 * 담당자: 최혁
-  - Elasticsearch을 이용한 도서 통합 검색
-  - QueryDsl로 동적/복합 쿼리 자동 생성 및 관리
-  - 검색 결과 Pagenation 처리
+  - Elasticsearch를 활용하여 도서명 및 키워드 기반의 실시간 검색 기능 구현
+  - 가중치 기반 점수 연산을 통해 관련도 높은 결과를 우선적으로 노출하는 검색 로직 구현
+  - 도서 인덱싱 작업의 비동기 처리로 검색 데이터의 최신화 병렬 처리
+  - 검색 결과 Pagenation 및 정렬 처리
 
 ### ☑️ 카테고리
 * 담당자: 최혁
   - 카테고리 CRUD 구현
-  - 3계층으로 카테고리 분류
+  - 엔티티의 자기 참조 관계를 통해 트리 형태의 카테고리 계층 구조를 구현
+  - Redis를 활용하여 카테고리 데이터 캐싱 처리
 
 ### 🛒 장바구니
 * 담당자: 신찬섭
   - 장바구니 CRUD 구현
+  - 로그인을 한 회원의 장바구니 생성 및 조회
+  - 장바구니 물품 추가 시 db에 저장 후 관리
+  - 장바구니에서 물품 삭제 가능
 
 ### 🎟️ 쿠폰
 * 담당자: 최정환
+  - 쿠폰 CRUD 구현
+  - Spring Scheduler로 생일이 도래한 회원에게 자동 발급
+  - 서버 스케줄링 기반으로 운영 자동화 및 관리 용이
+  - RabbitMQ를 통한 회원가입 이벤트 기반 실시간 발급
+  - 비동기 메시지 큐 기반으로 대규모 트래픽 환경에서 확장성과 빠른처리
+  - 에러 로깅 및 이력 관리
+  - 외부 API 연동 등에서 오류 발생 시, 상세 로그 기록 및 저장
 
 ### 👤 회원
-* 담당자: 배성환, 최가은
+* 담당자: 최가은
   - 회원 CRUD 구현
-  - DooraySender를 통한 휴먼회원 해제
-  - 비회원 로그인 구현 (주문번호를 기반으로 로그인)
-  - 회원 상태(정상/휴먼/탈퇴) 관리
+  - DooraySender API를 이용한 휴면회원 인증
+  - 비회원 정보저장 및 주문조회 구현 (주문번호와 주문조회 비밀번호로 조회)
+  - 회원 상태(정상/휴면/탈퇴) 관리
   - DB 비밀번호 암호화(BCrypt 적용)
+  - 3개월 순수주문금액을 기반으로 회원등급 업데이트
 
 ### 📱 주문
 * 담당자: 박진호
@@ -257,27 +277,36 @@ https://book1lluwa.store
 * 담당자: 최가은
   - 회원 적립금(포인트) CRUD 구현
   - 결제시 포인트 사용/적립 로직 구현
-  - 포인트 소멸/유효기간 확인(마이페이지)
-  - 등급에 따른 적립율 구현
+  - 포인트 적립/차감 내역 조회
+  - 회원 등급에 따른 적립률 구현
+  - 회원가입/리뷰/포토리뷰/주문 시 포인트 적립에 관한 정책 관리
 
 ### 📝 리뷰
 * 담당자: 오준현
   - 리뷰 CRUD 구현
   - 사용자가 주문한 도서에 한하여 리뷰 작성기능 구현
+  - 리뷰 좋아요 기능 구현
   - 별점, 사진 첨부 등 다양한 리뷰 유형 지원
+  - MinIO 객체 스토리지를 활용해 이미지 업로드 및 URL 기반 관리를 구현
 
 ### 🏷️ 태그
 * 담당자: 최혁
   - 도서/카테고리별 자유 태그 추가 및 검색 지원
 
-### ❤️ 좋아요
-* 담당자: 오준현
+### ❤️ 도서 좋아요
+* 담당자: 최가은
   - 좋아요 CRUD 구현
-  - 회원별 좋아요 목록 저장 및 조회
+  - 회원별 좋아요한 도서 목록 저장 및 조회
 ---
 ## 📄 팀내 자료
+- ⭐️ [팀 노션](https://coconut-hedge-519.notion.site/1lluwa-20cf030dd17d817997f3cf1bc2774a5f)
 - 🎨 [Figma Design](https://www.figma.com/community/file/1514522679983172396)
-
+- 🚨 [커스텀 예외처리 정책](https://coconut-hedge-519.notion.site/214f030dd17d80e09b6df0b08169abf6?source=copy_link)
+- 🌐 [ERD Cloud](https://www.erdcloud.com/d/bqAZmQ8TgYuTMF3eW)
+- 📋 [스크럼 회의록](https://coconut-hedge-519.notion.site/20cf030dd17d81acbf93df0938b60f9d?source=copy_link)
+- 🔎 [Elastic Search](https://hill-band-b79.notion.site/Elastic-Search-238dd0c3a889808f9fb9ffae4e9c213c?source=copy_link)
+- 🐰 [Rabbit MQ](https://bottlenose-balloon-0b4.notion.site/RabbitMQ-23b5c23e942f80c88474dc459f21d5ed?source=copy_link)
+- 🔐 [IsLoggedIn](https://riveroad-workspace.notion.site/IsLoggedIn-20e127c5895d8028808bff22e404ba89?source=copy_link)
 ---
 
 ## 🛠️ Stack
@@ -289,7 +318,7 @@ https://book1lluwa.store
   <img src="https://img.shields.io/badge/SonarQube-4E9BCD?style=for-the-badge&logo=sonarqube&logoColor=white" alt="SonarQube"/>
     <img src="https://img.shields.io/badge/Spring%20Cloud-00ADEF?style=for-the-badge&logo=Spring&logoColor=FFFFFF" alt="SpringCloud"/>
   <img src="https://img.shields.io/badge/Apache%20Maven-C71A36?style=for-the-badge&logo=Apache+Maven&logoColor=FFFFFF" alt="ApacheMaven"/>
-</div>
+</div> </br>
 
 > Backend / Framework
 <div>
@@ -299,7 +328,7 @@ https://book1lluwa.store
     <img src="https://img.shields.io/badge/OpenFeign-0089BF?style=for-the-badge&logo=OpenFeign&logoColor=white" alt="OpenFeign"/>
     <img src="https://img.shields.io/badge/Spring%20Batch-6DB33F?style=for-the-badge&logo=Spring&logoColor=FFFFFF" alt="Spring Batch"/>
     <img src="https://img.shields.io/badge/Swagger-222222?style=for-the-badge&logo=Swagger&logoColor=85EA2D" alt="Swagger"/>
-</div>
+</div> </br>
 
 > Front
 <div>
@@ -307,7 +336,7 @@ https://book1lluwa.store
     <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=HTML5&logoColor=FFFFFF" alt="HTML5"/>
     <img src="https://img.shields.io/badge/CSS-663399?style=for-the-badge&logo=CSS&logoColor=FFFFFF" alt="CSS"/>
     <img src="https://img.shields.io/badge/JavaScript-222222?style=for-the-badge&logo=JavaScript&logoColor=F7DF1E" alt="JavaScript"/>
-</div>
+</div> </br>
 
 > Database / Data
 <div>
@@ -316,26 +345,23 @@ https://book1lluwa.store
   <img src="https://img.shields.io/badge/Elasticsearch-005571?style=for-the-badge&logo=Elasticsearch&logoColor=FFFFFF" alt="ElasticSearch"/>
   <img src="https://img.shields.io/badge/Logstash-005571?style=for-the-badge&logo=Logstash&logoColor=FFFFFF" alt="LogStash"/>
   <img src="https://img.shields.io/badge/RabbitMQ-FF6600?style=for-the-badge&logo=RabbitMQ&logoColor=FFFFFF" alt="RabbitMq"/>
-</div>
+</div> </br>
 
 > Security / API
 <div>
   <img src="https://img.shields.io/badge/Spring%20Security-6DB33F?style=for-the-badge&logo=Spring+Security&logoColor=FFFFFF" alt="SpringSecurity"/>
   <img src="https://img.shields.io/badge/JSON%20Web%20Tokens-000000?style=for-the-badge&logo=JSON+Web+Tokens&logoColor=FFFFFF" alt="JWT"/>
-</div>
+</div> </br>
 
 > Web Server / Infra
 <div>
   <img src="https://img.shields.io/badge/NGINX-009639?style=for-the-badge&logo=NGINX&logoColor=FFFFFF" alt="Nginx"/>
-</div>
+</div> </br>
 
 > Test Code
 <div>
     <img src="https://img.shields.io/badge/JUnit5-25A162?style=for-the-badge&logo=JUnit5&logoColor=FFFFFF" alt="Junit5"/>
     <img src="https://img.shields.io/badge/WireMock-7B4AE2?style=for-the-badge&logo=wiremock&logoColor=white" alt="WireMock"/>
     <img src="https://img.shields.io/badge/Mockito-4CAF50?style=for-the-badge&logo=mockito&logoColor=white" alt="Mockito"/>
-</div>
+</div> </br>
 
----
-
-## 📬 Contact
