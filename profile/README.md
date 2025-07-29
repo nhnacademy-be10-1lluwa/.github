@@ -299,6 +299,7 @@ https://book1lluwa.store
   - 회원별 좋아요한 도서 목록 저장 및 조회
 ---
 ## 📄 팀내 자료
+- ⭐️ [팀 노션](https://coconut-hedge-519.notion.site/1lluwa-20cf030dd17d817997f3cf1bc2774a5f)
 - 🎨 [Figma Design](https://www.figma.com/community/file/1514522679983172396)
 - 🚨 [커스텀 예외처리 정책](https://coconut-hedge-519.notion.site/214f030dd17d80e09b6df0b08169abf6?source=copy_link)
 - 🌐 [ERD Cloud](https://www.erdcloud.com/d/bqAZmQ8TgYuTMF3eW)
