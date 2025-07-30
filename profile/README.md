@@ -160,19 +160,18 @@ https://book1lluwa.store/docs.html
 #### 📚 **Git 협업/커밋 컨벤션 자세히 보기**
 - [Git 협업 규칙 (Notion)](https://www.notion.so/Git-20cf030dd17d80e3a498ee999a201ba9?source=copy_link)
 - [Git Commit Message Convention (Notion)](https://www.notion.so/Git-Commit-Message-Convention-20cf030dd17d8152ada7ee85a929403b?source=copy_link)
-
+- 
 ---
 
 ## ERD
 
-<img width="4790" height="2476" alt="BookStore #2" src="https://github.com/user-attachments/assets/45ebd4e3-66de-4cea-afef-e7ec3aa14225" />
+<img width="4650" height="2332" alt="Copy of BookStore #2 (1)" src="https://github.com/user-attachments/assets/48520245-cff6-44a1-8bf4-54f8300132d2" />
 
 ---
 
 ## Kanban Board
 
-<img width="4790" height="2476" alt="image" src="https://github.com/user-attachments/assets/f8272aa3-aed2-4b81-bab4-92ef56d877f9" />
-" />
+<img width="2206" height="1217" alt="image" src="https://github.com/user-attachments/assets/6891af2b-1b57-4ddc-bae3-e5c153e3e505" />
 
 ---
 
