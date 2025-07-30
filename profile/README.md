@@ -15,6 +15,10 @@
 ---
 ### 📖 도메인
 https://book1lluwa.store
+
+### 📋 API 명세서
+https://book1lluwa.store/docs.html
+
 ---
 
 ## 🧑‍🤝‍🧑 팀원
