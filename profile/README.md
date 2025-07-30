@@ -171,7 +171,8 @@ https://book1lluwa.store/docs.html
 
 ## Kanban Board
 
-<img width="2206" height="1217" alt="image" src="https://github.com/user-attachments/assets/6891af2b-1b57-4ddc-bae3-e5c153e3e505" />
+<img width="4790" height="2476" alt="image" src="https://github.com/user-attachments/assets/f8272aa3-aed2-4b81-bab4-92ef56d877f9" />
+" />
 
 ---
 
