@@ -161,8 +161,7 @@ https://book1lluwa.store
 
 ## ERD
 
-<img width="4650" height="2332" alt="Copy of BookStore #2" src="https://github.com/user-attachments/assets/f3928336-1708-4901-94f1-e268dc7ac707" />
-
+<img width="4650" height="2332" alt="Copy of BookStore #2 (1)" src="https://github.com/user-attachments/assets/48520245-cff6-44a1-8bf4-54f8300132d2" />
 
 ---
 
