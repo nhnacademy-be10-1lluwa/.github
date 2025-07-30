@@ -160,7 +160,6 @@ https://book1lluwa.store/docs.html
 #### 📚 **Git 협업/커밋 컨벤션 자세히 보기**
 - [Git 협업 규칙 (Notion)](https://www.notion.so/Git-20cf030dd17d80e3a498ee999a201ba9?source=copy_link)
 - [Git Commit Message Convention (Notion)](https://www.notion.so/Git-Commit-Message-Convention-20cf030dd17d8152ada7ee85a929403b?source=copy_link)
-- 
 ---
 
 ## ERD
