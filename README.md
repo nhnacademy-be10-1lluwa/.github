@@ -2,8 +2,7 @@
 > **Book1lluwa**는 도서 판매를 위한 온라인 쇼핑몰을 MSA(Microservices Architecture) 구조로 구현한 프로젝트입니다.<br/>
 실제 서비스 환경을 고려해 회원가입부터 주문, 결제, 리뷰 작성, 쿠폰 적용까지의 전자상거래 전 과정을 분산 아키텍처로 구성하였으며, JWT 인증, Redis, Toss Payments API 연동, 무중단 배포 환경 구성(CI/CD) 등 실무와 유사한 환경을 경험할 수 있도록 설계하였습니다.
 
-프로젝트 기간: 2025.05 ~ 2025.07
-
+프로젝트 기간: 2025.06 ~ 2025.07
 ####
 📎 [프로젝트 소개 영상 바로가기](https://youtu.be/Mm8H87yzw7I)
 ## 🎯 주요 목적
@@ -16,6 +15,10 @@
 ---
 ### 📖 도메인
 https://book1lluwa.store
+
+### 📋 API 명세서
+https://book1lluwa.store/docs.html
+
 ---
 
 ## 🧑‍🤝‍🧑 팀원
@@ -157,7 +160,6 @@ https://book1lluwa.store
 #### 📚 **Git 협업/커밋 컨벤션 자세히 보기**
 - [Git 협업 규칙 (Notion)](https://www.notion.so/Git-20cf030dd17d80e3a498ee999a201ba9?source=copy_link)
 - [Git Commit Message Convention (Notion)](https://www.notion.so/Git-Commit-Message-Convention-20cf030dd17d8152ada7ee85a929403b?source=copy_link)
-
 ---
 
 ## ERD
@@ -294,7 +296,7 @@ https://book1lluwa.store
 * 담당자: 최혁
   - 도서/카테고리별 자유 태그 추가 및 검색 지원
 
-### ❤️ 도서 좋아요
+### ❤️ 좋아요
 * 담당자: 최가은
   - 좋아요 CRUD 구현
   - 회원별 좋아요한 도서 목록 저장 및 조회
