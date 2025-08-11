@@ -28,7 +28,7 @@ https://book1lluwa.store/docs.html
         <td align="center" style="padding: 20px;">
             <a href="https://github.com/pear-c" style="text-decoration: none; color: #333;">
                 <img src="https://github.com/pear-c.png" width="120px" style="border-radius: 50%; border: 3px solid #ddd;" alt="배성환"/><br/>
-                <sub><b style="font-size: 14px;">배성환</b></sub>
+                <sub>(팀장)<b style="font-size: 14px;">배성환</b></sub>
             </a>
         </td>
         <td align="center" style="padding: 20px;">
@@ -92,7 +92,7 @@ https://book1lluwa.store/docs.html
 ## 🌐 System Architecture
 
 <p align="center">
-    <img width="1896" height="853" alt="Book1lluwa drawio" src="https://github.com/user-attachments/assets/a3ae5253-025a-4a55-8fcf-8388cf94ec6c" />
+    <img width="1896" height="853" alt="Book1lluwa 아키텍처" src="https://github.com/user-attachments/assets/8a348e2a-9fae-4087-9755-e083a97cb3f4" />
 </p>
 
 
