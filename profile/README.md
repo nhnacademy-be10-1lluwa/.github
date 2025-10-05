@@ -92,7 +92,8 @@ https://book1lluwa.store/docs.html
 ## 🌐 System Architecture
 
 <p align="center">
-    <img width="1896" height="853" alt="Book1lluwa 아키텍처" src="https://github.com/user-attachments/assets/8a348e2a-9fae-4087-9755-e083a97cb3f4" />
+    <img width="1316" height="585" alt="image" src="https://github.com/user-attachments/assets/61c173f4-7b58-4d8a-9a7f-a5b2d0a533ef" />
+
 </p>
 
 
