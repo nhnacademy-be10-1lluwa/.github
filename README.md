@@ -92,7 +92,7 @@ https://book1lluwa.store/docs.html
 ## 🌐 System Architecture
 
 <p align="center">
-    <img width="1896" height="853" alt="Book1lluwa 아키텍처" src="https://github.com/user-attachments/assets/8a348e2a-9fae-4087-9755-e083a97cb3f4" />
+    <img width="1318" height="594" alt="image" src="https://github.com/user-attachments/assets/1e4c3329-e36d-44c7-9e5d-703dc49a2c99" />
 </p>
 
 
@@ -110,8 +110,9 @@ https://book1lluwa.store/docs.html
 ## 🚀 CI/CD & 운영 프로세스
 
 <p align="center">
-  <img width="1881" height="419" alt="CI_CD drawio" src="https://github.com/user-attachments/assets/f6243c1d-b8cb-4f29-8beb-f016bf996e96" />
+  <img width="952" height="279" alt="image" src="https://github.com/user-attachments/assets/e25fe487-712d-4fd9-a361-79efe01a0ab6" />
 </p>
+
 
 ### 1. 이슈 및 라벨 관리
 - 모든 개발/수정/테스트/문서화 작업은 반드시 **GitHub Issue**를 먼저 생성후
@@ -140,8 +141,8 @@ https://book1lluwa.store/docs.html
 - 각 도메인별 `.github/workflows/deploy.yml` 파일로 관리합니다.
 - **main 브랜치에 PR이 머지될 때마다**
   - Maven 빌드
-  - 서버에 jar 업로드
-  - 서비스 재시작이 자동으로 실행됩니다.
+  - Dockerfile 로 이미지 생성
+  - Docker hub 로 Push 및 컨테이너 기반 배포
 
 #### 4-2. **코드 품질 분석 (SonarQube Workflow)**
 - `.github/workflows/sonarQube.yml`로 코드 품질과 테스트 커버리지 분석을 자동화합니다.
